@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Manual-player instantiation example</title>
+	<link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+	<script src="https://cdn.dashjs.org/latest/dash.all.debug.js"></script>
+	<script type="text/javascript" src="https://unpkg.com/videojs-contrib-dash/dist/videojs-dash.js"></script>
+    <script class="code">
+        function init() {
+            var video,
+                player,
+                url = "https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd";
+
+            video = document.querySelector("video");
+            player = dashjs.MediaPlayer().create();
+            player.initialize(video, url, true);
+        }
+    </script>
+    <style>
+        video {
+            width: 640px;
+            height: 360px;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="code">
+            <video controls="true">
+            </video>
+        </div>
+        <script class="code">
+            document.addEventListener("DOMContentLoaded", function () {
+                init();
+            });
+        </script>
+    </body>
+</html>
